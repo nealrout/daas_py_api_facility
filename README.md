@@ -33,7 +33,7 @@ DYNACONF_SECRET_KEY=\<secret_key\>
 
 ## Uninstall-Install
 __Uninstall:__  
-python -m pip uninstall daas_py_api_asset
+python -m pip uninstall daas_py_api_facility
 
 __Install:__  
 python -m pip install .
@@ -43,7 +43,7 @@ python -m pip install --no-binary :all: .
 
 ## Usage
 __Set correct directory:__  
-cd .\asset_api\  
+cd .\facility_api\  
 
 __Start Django api:__  
 python manage.py runserver
