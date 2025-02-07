@@ -137,4 +137,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,  # Sets pagination to 10 items per page
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',  # Optional for Browsable API
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # Requires authentication for all endpoints
+    ],
 }
+
+CUSTOM_AUTH_USERNAME = config.get_secret('API_BASIC_AUTH_USER')
+CUSTOM_AUTH_PASSWORD = config.get_secret('API_BASIC_AUTH_PASSWORD')
+
+AUTHENTICATION_BACKENDS = [
+    'facility.authentication.CustomBackend',  # Custom authentication
+    'django.contrib.auth.backends.ModelBackend',  # Default Django authentication
+]
