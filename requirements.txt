@@ -1,4 +1,5 @@
-daas_py_config @ file:../daas_py_config
+daas_py_common
+daas_py_config
 requests
 django
 djangorestframework
@@ -7,3 +8,4 @@ python-dotenv
 setuptools
 wheel
 pysolr
+whitenoise
